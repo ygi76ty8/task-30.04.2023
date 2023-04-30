@@ -1,0 +1,59 @@
+using System;
+
+class Program
+
+{
+
+static void Main(string[] args)
+
+{
+
+double sum = 0;
+
+double term = 0;
+
+int n = 0;
+
+while (true)
+
+{
+
+// Обчислюємо наступний член ряду
+
+term = Math.Pow(-1, n) / ((n + 1) * (n + 2) * (n + 3));
+
+sum += term;
+
+n++;
+
+// Якщо точність досягнута, виводимо результат і виходимо з циклу
+
+if (Math.Abs(term) < 0.000001)
+
+{
+
+Console.WriteLine("The sum of terms of the series with an accuracy of 0.000001:" + sum);
+
+break;
+
+}
+
+// Якщо пройшли 10 ітерацій, виводимо суму перших 10 членів ряду і виходимо з циклу
+
+if (n == 10)
+
+{
+
+Console.WriteLine("The sum of the first 10 members of the series:" + sum);
+
+break;
+
+}
+
+}
+
+Console.ReadKey();
+
+}
+
+}
