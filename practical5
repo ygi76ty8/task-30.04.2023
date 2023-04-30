@@ -1,0 +1,33 @@
+string sentence = "This is a sentence with several samples in a row";
+
+int maxSpaces = 0;
+
+int currentSpaces = 0;
+
+foreach (char c in sentence)
+
+{
+
+if (c == ' ')
+
+{
+
+currentSpaces++;
+
+}
+
+else
+
+{
+
+maxSpaces = Math.Max(maxSpaces, currentSpaces);
+
+currentSpaces = 0;
+
+}
+
+}
+
+maxSpaces = Math.Max(maxSpaces, currentSpaces);
+
+Console.WriteLine("The largest number of consecutive spaces: " + maxSpaces);
