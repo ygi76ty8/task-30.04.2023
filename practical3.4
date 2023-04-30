@@ -1,0 +1,47 @@
+using System;
+
+class Program
+
+{
+
+static bool IsPrime(int number)
+
+{
+
+if (number < 2)
+
+return false;
+
+for (int i = 2; i <= Math.Sqrt(number); i++)
+
+{
+
+if (number % i == 0)
+
+return false;
+
+}
+
+return true;
+
+}
+
+static void Main()
+
+{
+
+for (int number = 100; number < 300; number++)
+
+{
+
+if (IsPrime(number))
+
+Console.WriteLine(number);
+
+}
+
+Console.ReadLine();
+
+}
+
+}
